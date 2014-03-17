@@ -391,11 +391,13 @@
   })(RT.BaseManager);
 
   RT.ControlsPanelsManager = (function(_super) {
-    var ADDED;
+    var ADDED, EVENT;
 
     __extends(ControlsPanelsManager, _super);
 
     ADDED = 'added';
+
+    EVENT = 'Event';
 
     function ControlsPanelsManager() {
       ControlsPanelsManager.__super__.constructor.apply(this, arguments);
@@ -423,11 +425,8 @@
       panel = this[panelName];
       panel.add(el);
       this.widgets[panelName].push(el);
-      event = new CustomEvent(ADDED, {
-        parent: panel,
-        bubbles: true,
-        cancelable: true
-      });
+      event = document.createEvent(EVENT);
+      event.initEvent(ADDED, true, true);
       if (el.isWidget) {
         return el.dom.dispatchEvent(event);
       } else {
