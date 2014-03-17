@@ -1,0 +1,22 @@
+.ui.mask {
+  overflow: hidden;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none; }
+
+.ui.mask > *:first-child {
+  -webkit-transition: margin 0.2s ease-out;
+  transition: margin 0.2s ease-out;
+  display: inline-block; }
+
+.ui.veriField {
+  display: inline-block;
+  height: 39px;
+  color: white;
+  font-size: 14px;
+  text-shadow: white 0 0 3px;
+  background-color: rgba(0, 221, 255, 0.4);
+  box-shadow: 0 0 1px 1px black;
+  border: 0; }
