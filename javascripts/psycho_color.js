@@ -32,8 +32,9 @@
       this.addManager('controlsManager', new RT.ControlsManager);
       this.addManager('tableManager', new TableManager);
       this.headStyle = root.one('jsStyle').add(function() {
-        return this.tn(ss(window.screen.availWidth / 100 / window.devicePixelRatio * 2.5, 'px'));
+        return this.tn('');
       });
+      this.onResize();
       window.bi('orientationchange', 'onResize', {
         context: this
       });
@@ -43,7 +44,7 @@
     }
 
     PsychoColor.prototype.onResize = function() {
-      return this.headStyle.firstChild.nodeValue = ss(window.screen.availWidth / 100 * 2.5, 'px');
+      return this.headStyle.firstChild.nodeValue = ss(window.screen.availWidth / 100 / window.devicePixelRatio * 2.5, 'px');
     };
 
     PsychoColor.prototype.addFooter = function() {
