@@ -32,7 +32,7 @@
       this.addManager('controlsManager', new RT.ControlsManager);
       this.addManager('tableManager', new TableManager);
       this.headStyle = root.one('jsStyle').add(function() {
-        return this.tn(ss(window.screen.availWidth / 100 * 2.5, 'px'));
+        return this.tn(ss(window.screen.availWidth / 100 * 2.5 / window.devicePixelRatio, 'px'));
       });
       window.bi('orientationchange', 'onResize', {
         context: this
