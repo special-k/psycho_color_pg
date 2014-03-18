@@ -1,9 +1,9 @@
 (function() {
-  var BlueTableWidget, FooterWidget, GrayTableWidget, GreenTableWidget, MainTableWidget, NextTableWidget, PsychoColor, PsychoColorPanelsManager, RedTableWidget, ResultTableWidget, SelectColorYouDontLike, SelectColorYouLike, SelectColorsYouDontLike, SelectColorsYouLike, TableManager, WaitMomentBeforeselectColorsYouLike, YellowTableWidget, ss,
+  var BlueTableWidget, FooterWidget, GrayTableWidget, GreenTableWidget, MainTableWidget, NextTableWidget, PsychoColor, PsychoColorPanelsManager, RedTableWidget, ResultTableWidget, SelectColorYouDontLike, SelectColorYouLike, SelectColorsYouDontLike, SelectColorsYouLike, TableManager, WaitMomentBeforeselectColorsYouLike, YellowTableWidget,
     __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  ss = function(t, d) {
+  window.ss = function(t, d) {
     return ".card{ width: " + (5 * t + d) + "; height: " + (5 * t + d) + ";} .grayTable{ width: " + (17.5 * t + d) + "; height: " + (17.5 * t + d) + ";} .nextTable{ width: " + (27.5 * t + d) + "; height: " + (12.5 * t + d) + ";} .nextTable .darkBlue{ left: " + (7.5 * t + d) + ";} .nextTable .blueGreen{ right: " + (7.5 * t + d) + ";} .nextTable .purple{ left: " + (7.5 * t + d) + ";} .nextTable .brown{ right: " + (7.5 * t + d) + ";} .next2Table{ width: " + (27.5 * t + d) + "; height: " + (12.5 * t + d) + ";} .next2Table .darkBlue{ left: " + (7.5 * t + d) + ";} .next2Table .redYellow{ right: " + (7.5 * t + d) + ";} .next2Table .yellow{ left: " + (7.5 * t + d) + ";} .next2Table .brown{ right: " + (7.5 * t + d) + ";} .pairTable{ width: " + (19 * t + d) + "; height: " + (7 * t + d) + ";} .pairTable .card{ width: " + (7 * t + d) + "; height: " + (7 * t + d) + ";} .resultTable{ width: " + (32 * t + d) + "; padding: " + (1 * t + d) + "; padding-top: " + (3 * t + d) + "; padding-bottom: " + (2 * t + d) + ";} .window{ width: " + (15 * t + d) + "; height: " + (10 * t + d) + "; padding: " + (2 * t + d) + "; font-size: " + (0.9 * t + d) + ";} .window .delayButton{ padding: " + (0.5 * t + d) + "; font-size: " + (1.2 * t + d) + ";} .footer{ font-size: " + (0.4 * t + d) + ";} .footer span, a{ padding: " + (0.16 * t + d) + ";} p{ margin: " + (0.4 * t + d) + ";}";
   };
 
@@ -32,7 +32,7 @@
       this.addManager('controlsManager', new RT.ControlsManager);
       this.addManager('tableManager', new TableManager);
       this.headStyle = root.one('jsStyle').add(function() {
-        return this.tn(ss(window.screen.availWidth / 100 * 2.5 / window.devicePixelRatio, 'px'));
+        return this.tn(ss(window.screen.availWidth / 100 / window.devicePixelRatio * 2.5, 'px'));
       });
       window.bi('orientationchange', 'onResize', {
         context: this
